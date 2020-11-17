@@ -1,4 +1,17 @@
-<% @search_results.movie_overviews.each do |movie_overview| %>
-    <%= movie_overview.title %>
-    <%= movie_overview.release_date %>
-<% end %>
+<div class="container mt-5">
+    <div class="row">
+        <% @search_results.movie_overviews.each do |movie_overview| %>
+            <div class="col-lg-4 mb-3">
+                <a href="movies/<%= movie_overview.id %>" class="btn card" data-toggle="tooltip" title="Hovering now">
+                    <%= image_tag("movie-icon-15154", class: "card-img-top", alt: "movie-icon-15154") %>
+                    <!-- <img class="card-img-top" src="" > -->
+                    <div class="card-body">
+                    <h5 class="card-title"><%= movie_overview.title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= movie_overview.release_date %></h6>
+                    <p class="card-text"><%= movie_overview.overview %></p>
+                    </div>
+                </a>
+            </div>
+        <% end %>
+    </div>
+</div>
