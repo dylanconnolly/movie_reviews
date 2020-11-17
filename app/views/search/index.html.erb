@@ -3,8 +3,7 @@
         <% @search_results.movie_overviews.each do |movie_overview| %>
             <div class="col-lg-4 mb-3">
                 <a href="movies/<%= movie_overview.id %>" class="btn card" data-toggle="tooltip" title="Hovering now">
-                    <%= image_tag("movie-icon-15154", class: "card-img-top", alt: "movie-icon-15154") %>
-                    <!-- <img class="card-img-top" src="" > -->
+                    <%= image_tag("https://image.tmdb.org/t/p/w300/#{movie_overview.backdrop_path}", class: "card-img-top", alt: "No Image") %>
                     <div class="card-body">
                     <h5 class="card-title"><%= movie_overview.title %></h5>
                     <h6 class="card-subtitle mb-2 text-muted"><%= movie_overview.release_date %></h6>
