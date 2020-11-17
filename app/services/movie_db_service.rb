@@ -14,4 +14,8 @@ class MovieDbService
     def self.search_movies(search, page=1)
         get_json("search/movie?query=#{search}&page=#{page}&")
     end
+
+    def self.get_movie(movie_id)
+        get_json("movie/#{movie_id}?")
+    end
 end

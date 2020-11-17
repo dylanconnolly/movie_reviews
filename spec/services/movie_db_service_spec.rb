@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "movie database service" do
-    it "should return json of response with first page of results based on movie title" do
+    it "should return json response with first page of results based on movie title" do
 
         response = MovieDbService.search_movies("Spiderman")
 
@@ -30,5 +30,15 @@ describe "movie database service" do
 
         expect(response[:results]).to eq([])
         expect(response[:total_results]).to eq(0)
+    end
+
+    it "should return a response with details of movie for given movie_id" do
+
+        response = MovieDbService.get_movie(557)
+
+        expect(response.keys.length).to be > 6
+        expect(response[:title]).to eq('Spider-Man')
+        expect(response[:release_date]).to eq("2002-05-01")
+        expect(response[:overview]).not_to be_empty
     end
 end
