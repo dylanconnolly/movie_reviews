@@ -11,7 +11,7 @@ class MovieDbService
         JSON.parse(response.body, symbolize_names: true)
     end
 
-    def self.search_movies(search)
-        get_json("search/movie?query=#{search}&")
+    def self.search_movies(search, page=1)
+        get_json("search/movie?query=#{search}&page=#{page}&")
     end
 end
