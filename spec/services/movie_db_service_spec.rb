@@ -3,13 +3,17 @@ require 'rails_helper'
 describe "movie database service" do
     it "should return json response with first page of results based on movie title" do
 
-        response = MovieDbService.search_movies("Spiderman")
+        service = MovieDbService.new
+
+        response = service.search_movies("Spiderman")
 
         expect(response[:results]).to_not eq([])
         expect(response[:results].first[:title]).to eq("Spider-Man")
         expect(response[:page]).to eq(1)
 
-        response = MovieDbService.search_movies("The man from uncle")
+        service = MovieDbService.new
+
+        response = service.search_movies("The man from uncle")
 
         expect(response[:results]).to_not eq([])
         expect(response[:total_results]).to eq(2)
@@ -18,7 +22,9 @@ describe "movie database service" do
 
     it "should allow an optional parameter of page to retrieve more results if they exist" do
 
-        response = MovieDbService.search_movies("Spiderman", 2)
+        service = MovieDbService.new
+
+        response = service.search_movies("Spiderman", 2)
 
         expect(response[:results]).to_not eq([])
         expect(response[:page]).to eq(2)
@@ -26,7 +32,9 @@ describe "movie database service" do
 
     it "should return a successful response with an empty results array if movie title does not return results" do
 
-        response = MovieDbService.search_movies("alkshfk")
+        service = MovieDbService.new
+
+        response = service.search_movies("alkshfk")
 
         expect(response[:results]).to eq([])
         expect(response[:total_results]).to eq(0)
@@ -34,7 +42,9 @@ describe "movie database service" do
 
     it "should return a response with details of movie for given movie_id" do
 
-        response = MovieDbService.get_movie(557)
+        service = MovieDbService.new
+
+        response = service.get_movie(557)
 
         expect(response.keys.length).to be > 6
         expect(response[:title]).to eq('Spider-Man')

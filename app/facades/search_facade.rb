@@ -1,7 +1,7 @@
 class SearchFacade
 
     def self.results(search)
-        response = MovieDbService.search_movies(search)
+        response ||= MoviewDbService.new.search_movies(search)
         
         SearchResults.new(response)
     end
