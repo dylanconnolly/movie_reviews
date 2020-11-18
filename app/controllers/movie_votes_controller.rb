@@ -14,6 +14,6 @@ class MovieVotesController < ApplicationController
     private
 
     def vote_params
-        params.permit(:movie_id, :title, :upvote, :downvote)
+        params.permit(:title, :upvote, :downvote)
     end
 end

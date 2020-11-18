@@ -9,4 +9,10 @@ class Movie
         @release_date = movie_db_data[:release_date]
         @overview = movie_db_data[:overview]
     end
+
+    def get_movie_votes
+        MovieVote.where(title: @title)
+    end
+
+
 end
