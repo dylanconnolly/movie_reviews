@@ -8,4 +8,16 @@ class MovieOverview
         @overview = movie_db_data[:overview]
         @backdrop_path = movie_db_data[:backdrop_path]
     end
+
+    def short_description
+        @overview.truncate(150, separator: ' ')
+    end
+
+    def year
+        if @release_date == '' || @release_date == nil
+            ""
+        else
+            @release_date.split('-')[0]
+        end
+    end
 end

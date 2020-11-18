@@ -1,7 +1,9 @@
 class SearchFacade
+    attr_reader :query
 
-    def initialize(search)
+    def initialize(search, page)
         @query = search
+        @page = page
         movie_overviews
     end
 
@@ -27,6 +29,10 @@ class SearchFacade
     # private
 
     def response
-        @response ||= MovieDbService.search_movies(@query)
+        if @page
+            @response ||= MovieDbService.search_movies(@query, @page)
+        else
+            @response ||= MovieDbService.search_movies(@query)
+        end
     end
 end
