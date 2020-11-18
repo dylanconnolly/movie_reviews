@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_18_190658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_ratings", force: :cascade do |t|
+    t.string "title"
+    t.integer "likes"
+    t.integer "dislikes"
+  end
 
 end
