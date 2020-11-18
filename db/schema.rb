@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_210521) do
+ActiveRecord::Schema.define(version: 2020_11_18_215420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "movie_votes", force: :cascade do |t|
     t.string "title"
-    t.integer "upvote"
-    t.integer "downvote"
+    t.integer "upvote", default: 0
+    t.integer "downvote", default: 0
   end
 
 end
