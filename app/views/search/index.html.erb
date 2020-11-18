@@ -1,6 +1,9 @@
 <div class="container mt-5">
+    Current Page: <%= @search_facade.current_page %>
+    Total Results: <%= @search_facade.total_results %>
+    Total Pages: <%= @search_facade.total_pages %>
     <div class="row">
-        <% @search_results.movie_overviews.each do |movie_overview| %>
+        <% @search_facade.movie_overviews.each do |movie_overview| %>
             <div class="col-lg-4 mb-3">
                 <a href="movies/<%= movie_overview.id %>" class="btn card" data-toggle="tooltip" title="Hovering now">
                     <%= image_tag("https://image.tmdb.org/t/p/w300/#{movie_overview.backdrop_path}", class: "card-img-top", alt: "No Image") %>

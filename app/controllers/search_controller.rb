@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
 
     def index
-        @search_results = SearchFacade.results(params[:title])
-        require 'pry'; binding.pry
+        @search_facade = SearchFacade.new(params[:title])
     end
 end

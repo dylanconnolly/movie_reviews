@@ -1,8 +1,32 @@
 class SearchFacade
 
-    def self.results(search)
-        @response ||= MovieDbService.new.search_movies(search)
-        
-        SearchResults.new(@response)
+    def initialize(search)
+        @query = search
+        movie_overviews
+    end
+
+    def movie_overviews
+        @mapped ||= response[:results].map do |movie_info|
+            p "I'm mapping over movies right now....."
+            MovieOverview.new(movie_info)
+        end
+    end
+
+    def current_page
+        response[:page]
+    end
+
+    def total_results
+        response[:total_results]
+    end
+    
+    def total_pages
+        response[:total_pages]
+    end
+
+    # private
+
+    def response
+        @response ||= MovieDbService.search_movies(@query)
     end
 end

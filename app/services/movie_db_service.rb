@@ -16,6 +16,7 @@ class MovieDbService
     end
 
     def self.get_json(uri)
+        p 'MAKING API CALL YOU IDIOT'
         response = connection.get("#{uri}api_key=#{ENV["THE_MOVIE_DB_API_KEY"]}")
         JSON.parse(response.body, symbolize_names: true)
     end
