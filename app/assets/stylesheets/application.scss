@@ -12,30 +12,37 @@
  *
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
- html {
-    font-size: 0.75rem;
-  }
-  
-  @include media-breakpoint-up(sm) {
-    html {
-      font-size: 0.5rem;
-    }
-  }
-  
-  @include media-breakpoint-up(md) {
-    html {
-      font-size: 0.5rem;
-    }
-  }
-  
-  @include media-breakpoint-up(lg) {
-    html {
-      font-size: 0.75rem;
-    }
-  }
+html {
+  font-size: 0.75rem;
+}
 
-  .movie:hover {
-      opacity: 85%;
+@include media-breakpoint-down(md) {
+  html {
+    font-size: 0.25rem;
   }
+  
+  .title-poster {
+    height: 14vw;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+.movie-index-card:hover {
+    opacity: 85%;
+}
+
+.crop {
+  height: 20vw;
+  object-fit: cover;
+}
+
+.title-poster {
+  height: 5vw;
+}
