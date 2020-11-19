@@ -2,9 +2,13 @@ class MovieVotesController < ApplicationController
 
     def create
         movie_vote = MovieVote.new(vote_params)
-
+        
         if movie_vote.save
-            redirect_to "/movies/#{params[:movie_id]}"
+            @movie = MovieFacade.new.movie_details(params[:movie_id])
+            respond_to do |format|
+                format.html { redirect_back }
+                format.js { render "/movies/vote" }
+            end
         else
             flash[:error] = "An error occurred."
             render template: "movies/show"

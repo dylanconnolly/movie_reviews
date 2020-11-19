@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Movie, type: :model do
 
-    it "get_movie_votes method" do
+    it "methods" do
 
         movie_data = {
         id: "1",
@@ -27,6 +27,7 @@ describe Movie, type: :model do
             MovieVote.create(title: "Different movie", upvote: 1)
         end
 
-        expect(movie.get_movie_votes.count).to eq(8)
+        expect(movie.get_upvotes).to eq(5)
+        expect(movie.get_downvotes).to eq(3)
     end
 end
