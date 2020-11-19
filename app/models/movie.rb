@@ -9,12 +9,4 @@ class Movie
         @release_date = movie_db_data[:release_date]
         @overview = movie_db_data[:overview]
     end
-
-    def get_upvotes
-        MovieVote.where(title: @title, upvote: 1).count
-    end
-
-    def get_downvotes
-        MovieVote.where(title: @title, downvote: 1).count
-    end
 end

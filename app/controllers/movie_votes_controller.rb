@@ -4,7 +4,7 @@ class MovieVotesController < ApplicationController
         movie_vote = MovieVote.new(vote_params)
         
         if movie_vote.save
-            @movie = MovieFacade.new.movie_details(params[:movie_id])
+            @vote_counter = VoteCounter.new(movie_vote.title, params[:movie_id])
             respond_to do |format|
                 format.html { redirect_back }
                 format.js { render "/movies/vote" }

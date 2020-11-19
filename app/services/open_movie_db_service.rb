@@ -12,6 +12,7 @@ class OpenMovieDbService
     end
 
     def self.get_json(uri)
+        p 'MAKING OPEN MOVIE API CALL YOU IDIOT'
         response = connection.get("?apikey=#{ENV["OPEN_MOVIE_DB_API_KEY"]}#{uri}")
         JSON.parse(response.body, symbolize_names: true)
     end

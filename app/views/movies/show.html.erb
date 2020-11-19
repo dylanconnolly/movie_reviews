@@ -1,17 +1,17 @@
 <div class="container">
     <p>
-        <%= @movie.title %>
+        <%= @movie_facade.movie.title %>
     </p>
     <p>
-        <%= @movie.director %>
+        <%= @movie_facade.movie.director %>
     </p>
     <p>
-        <%= @movie.release_date %>
+        <%= @movie_facade.movie.release_date %>
     </p>
     <p>
-        <%= @movie.overview %>
+        <%= @movie_facade.movie.overview %>
     </p>
     
     
-    <%= render partial: 'vote', locals: {movie: @movie} %>
+    <%= render partial: 'vote', locals: { vote_counter: @movie_facade.vote_counter } %>
 </div>
