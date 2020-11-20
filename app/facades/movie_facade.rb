@@ -8,7 +8,7 @@ class MovieFacade
     def movie
         movie_db_response = movie_db_details
         open_movie_response = open_movie_details(movie_db_response[:imdb_id])
-
+        
         @movie ||= Movie.new(movie_db_response, open_movie_response)
     end
 

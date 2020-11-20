@@ -2,19 +2,39 @@
     <div class="card shadow-sm h-100">
         <%= image_tag("https://image.tmdb.org/t/p/w1280/#{@movie_facade.movie.backdrop_path}", class: "card-img-top crop", alt: "No Image") %>
         <div class="card-body">
-            <h2 class="card-title">
-                <%= image_tag("https://image.tmdb.org/t/p/w92/#{@movie_facade.movie.poster_path}", class: "title-poster")%>
-                <%= @movie_facade.movie.title %>
-                <small class="text-muted"><%= @movie_facade.movie.year %></small>
+            <h2 class="card-title mb-4">
+                <div class="row align-items-center">
+                    <div class="col-1 pr-0 title-banner-poster">
+                        <%= image_tag("https://image.tmdb.org/t/p/w92/#{@movie_facade.movie.poster_path}", class: "title-poster")%>
+                    </div>
+                    <div class="col-8 pl-0 title-banner">
+                            <%= @movie_facade.movie.title %>
+                            <small class="text-muted"><%= @movie_facade.movie.year %></small>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="card-subtitle mt-2 text-muted">
+                                    <%= @movie_facade.movie.rated %>
+                                    <span>|</span>
+                                    <%= @movie_facade.movie.genre %>
+                                    <span>|</span>
+                                    <%= @movie_facade.movie.runtime %>
+                                    <span>|</span>
+                                    <%= @movie_facade.movie.release_date %>
+                                </h6>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 title-votes">
+                        <%= render partial: 'vote', locals: { vote_counter: @movie_facade.vote_counter } %>
+                    </div>
+                </div>
             </h2>
-            <h6 class="card-subtitle mb-2 text-muted">
-                <%= @movie_facade.movie.release_date %>
-            </h6>
+            
             <p>
-                Description: <%= @movie_facade.movie.overview %>
+             <%= @movie_facade.movie.overview %>
             </p>
             <p>
-                Director:    <%= @movie_facade.movie.director %>
+                <b>Director:</b> <%= @movie_facade.movie.director %>
             </p>
         </div>
     </div>
