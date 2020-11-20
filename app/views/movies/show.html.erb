@@ -2,7 +2,7 @@
     <div class="card shadow-sm h-100">
         <%= image_tag("https://image.tmdb.org/t/p/w1280/#{@movie_facade.movie.backdrop_path}", class: "card-img-top crop", alt: "No Image") %>
         <div class="card-body">
-            <h2 class="card-title mb-4">
+            <h2 class="card-title pb-2 mb-2 border-bottom">
                 <div class="row align-items-center">
                     <div class="col-1 pr-0 title-banner-poster">
                         <%= image_tag("https://image.tmdb.org/t/p/w92/#{@movie_facade.movie.poster_path}", class: "title-poster")%>
@@ -34,7 +34,10 @@
              <%= @movie_facade.movie.overview %>
             </p>
             <p>
-                <b>Director:</b> <%= @movie_facade.movie.director %>
+                <b>Directed by:</b> <%= @movie_facade.movie.directors %>
+            </p>
+            <p>
+                <b>Starring:</b> <%= @movie_facade.movie.main_actors %>
             </p>
         </div>
     </div>

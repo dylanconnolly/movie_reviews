@@ -1,5 +1,5 @@
 class Movie
-    attr_reader :id, :title, :director, :imdb_id, :release_date, :overview, :backdrop_path, :poster_path, :runtime, :genre, :rated
+    attr_reader :id, :title, :directors, :imdb_id, :release_date, :overview, :backdrop_path, :poster_path, :runtime, :genre, :rated, :main_actors
 
     def initialize(movie_db_data, open_movie_db_data)
         @id = movie_db_data[:id]
@@ -9,10 +9,11 @@ class Movie
         @overview = movie_db_data[:overview]
         @backdrop_path = movie_db_data[:backdrop_path]
         @poster_path = movie_db_data[:poster_path]
-        @director = open_movie_db_data[:Director]
+        @directors = open_movie_db_data[:Director]
         @runtime = open_movie_db_data[:Runtime]
         @genre = open_movie_db_data[:Genre]
         @rated = open_movie_db_data[:Rated]
+        @main_actors = open_movie_db_data[:Actors]
     end
 
     def year
