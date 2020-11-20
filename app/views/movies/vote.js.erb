@@ -1,4 +1,5 @@
 $(document).ready(function() {
     $('#votes').html("<%= j render partial: 'movies/vote', locals: { vote_counter: @vote_counter } %>");
-    $("button").prop("disabled", true);
+    $("#upvote-button").prop("disabled", true);
+    $("#downvote-button").prop("disabled", true);
 });
