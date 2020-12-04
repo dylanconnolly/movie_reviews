@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <p style="text-align: right">Page <%= @search_facade.current_page %> of <%= @search_facade.total_pages %> | <%= @search_facade.total_results %> total results</p>
+    <div class="row">
+        <% @search_facade.movie_overviews.each do |movie_overview| %>
+            <div class="col-sm-3 mb-3">
+                <a href="movies/<%= movie_overview.id %>" class="btn card shadow h-100 movie-index-card" data-toggle="tooltip" title="<%= movie_overview.short_description %>">
+                    <%= image_tag("https://image.tmdb.org/t/p/w300/#{movie_overview.backdrop_path}", class: "card-img-top", alt: "No Image") %>
+                    <div class="card-body">
+                        <h6 class="card-title">
+                            <%= movie_overview.title %>
+                            <small class="text-muted"><%= movie_overview.year %></small>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        <% end %>
+    </div>
+    <%= render partial: 'pagination', locals: {total_pages: @search_facade.pagination, current_page: @search_facade.current_page, query: @search_facade.query } %>
+</div>
