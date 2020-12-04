@@ -1,24 +1,33 @@
-# README
+# Movie Reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails application which consumes two free movie APIs  ([The Movie Database](https://www.themoviedb.org/) and [The Open Movie Database](http://www.omdbapi.com/)) and aggregates the information for the user. Users can search for a movie title and be presented with a list of all of the search results. Users can click on a specific movie from these search results to view greater detail about the given movie.
 
-Things you may want to cover:
 
-* Ruby version
+# Set Up
 
-* System dependencies
+1. Clone this repo `git clone git@github.com:dylanconnolly/movie_reviews.git`
+1. Install dependencies
 
-* Configuration
+   It is suggested you use [Bundler](https://bundler.io/) to install the dependencies
+   
+   Once you have Bundler, run `bundle install` in the root of the directory
+  
+1. Run `bundle exec figaro install`
 
-* Database creation
+   This will create a `application.yml` file in the `config/` folder of the project
 
-* Database initialization
+1. Add the API Keys provided for the two API services to the `config/application.yml` file like so:
 
-* How to run the test suite
+    ```
+    THE_MOVIE_DB_API_KEY: "paste_key_here"
+    OPEN_MOVIE_DB_API_KEY: "paste_key_here"
+    ```
+    *Do not change the variable name and ensure the API Keys are surrounded by quotes.*
+  
+1. Start the rails server and navigate to the homepage
 
-* Services (job queues, cache servers, search engines, etc.)
+   `rails s` and navigate to `localhost:3000` in your browser.
 
-* Deployment instructions
 
-* ...
+
+
