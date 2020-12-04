@@ -1,7 +1,5 @@
 <div class="container mt-5">
-    Current Page: <%= @search_facade.current_page %>
-    Total Results: <%= @search_facade.total_results %>
-    Total Pages: <%= @search_facade.total_pages %>
+    <p style="text-align: right">Page <%= @search_facade.current_page %> of <%= @search_facade.total_pages %> | <%= @search_facade.total_results %> total results</p>
     <div class="row">
         <% @search_facade.movie_overviews.each do |movie_overview| %>
             <div class="col-sm-3 mb-3">
