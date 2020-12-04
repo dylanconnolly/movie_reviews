@@ -5,12 +5,14 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
 
 # Set Up
 
-1. Clone this repo `git clone git@github.com:dylanconnolly/movie_reviews.git`
+1. Clone this repo: `git clone git@github.com:dylanconnolly/movie_reviews.git`
 1. Install dependencies
 
    It is suggested you use [Bundler](https://bundler.io/) to install the dependencies
    
    Once you have Bundler, run `bundle install` in the root of the directory
+   
+1. Create, migrate, and seed the database: `rake db:{create,migrate,seed}`
   
 1. Run `bundle exec figaro install`
 
