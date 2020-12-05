@@ -5,7 +5,7 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
 
 # Set Up
 
-1. Clone this repo: `git clone git@github.com:dylanconnolly/movie_reviews.git`
+1. Clone this repo: `git clone git@github.com:dylanconnolly/movie_reviews.git` and navigate into the root of the directory `cd movie_reviews`
 1. Install dependencies
 
    It is suggested you use [Bundler](https://bundler.io/) to install the dependencies
@@ -21,6 +21,9 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
 1. Add the API Keys provided for the two API services to the `config/application.yml` file like so:
 
     ```
+    # Add configuration values here, as shown below.
+    ...
+
     THE_MOVIE_DB_API_KEY: "paste_key_here"
     OPEN_MOVIE_DB_API_KEY: "paste_key_here"
     ```
