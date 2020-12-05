@@ -30,6 +30,41 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
 
    `rails s` and navigate to `localhost:3000` in your browser.
 
+# Application Images
 
+## Homepage
+<img width="1437" alt="Screen Shot 2020-12-04 at 5 11 45 PM" src="https://user-images.githubusercontent.com/54859243/101227418-f9247180-3654-11eb-9737-163979b80ed1.png">
 
+## Search Results
 
+<img width="1373" alt="Screen Shot 2020-12-04 at 5 29 46 PM" src="https://user-images.githubusercontent.com/54859243/101227881-b2d01200-3656-11eb-8669-89e1f5696a54.png">
+
+Hovering over a search results provides user with a brief overview of the movie's plot
+
+<img width="670" alt="Screen Shot 2020-12-04 at 5 34 00 PM" src="https://user-images.githubusercontent.com/54859243/101227977-04789c80-3657-11eb-8f90-9b123569ae4a.png">
+
+## Search Results Pagination
+
+The search results page will display the first 20 results returned for the movie title provided by the user. If there are more than 20 results, the user will have the ability to sort through pages using buttons at the bottom of the page.
+
+<img width="1428" alt="Screen Shot 2020-12-04 at 5 12 28 PM" src="https://user-images.githubusercontent.com/54859243/101228357-903ef880-3658-11eb-9b42-31e522d6eab3.png">
+
+If a user query returns more than 10 pages, buttons on the page navigation bar at the bottom will cycle to always show the 10 nearest pages to the user's current page.
+
+<img width="554" alt="Screen Shot 2020-12-04 at 5 44 47 PM" src="https://user-images.githubusercontent.com/54859243/101228442-f9267080-3658-11eb-8186-fd4b14144960.png">
+<img width="559" alt="Screen Shot 2020-12-04 at 5 44 56 PM" src="https://user-images.githubusercontent.com/54859243/101228444-f9bf0700-3658-11eb-999e-17c94ac61c2d.png">
+<img width="574" alt="Screen Shot 2020-12-04 at 5 45 04 PM" src="https://user-images.githubusercontent.com/54859243/101228445-fa579d80-3658-11eb-9d6d-a2aa4d39b19d.png">
+
+## Movie Details
+
+Clicking on a movie from the search results screen will take the user to that movie's detailed page where the user can see information such as director(s), actors and actressess starring in the film, runtime, genres, release date, as well as the number of upvotes or downvotes the movie has received on the site.
+
+<img width="1387" alt="Screen Shot 2020-12-04 at 5 15 45 PM" src="https://user-images.githubusercontent.com/54859243/101228104-6fc26e80-3657-11eb-9d27-9d105d60c277.png">
+
+## Upvoting/Downvoting
+
+From the movie detail page, users have the ability to click one of two buttons. They can click a thumbs-up button to record an 'upvote' for the movie, or they can click a thumbs-down button to record a 'downvote' for the movie. These votes are stored in the database and the number of votes will update asynchronously on the page view when a user votes on a movie. In addition to this, the buttons will also become inactive after a user has voted on the page, disallowing them to vote multiple times without refreshing the page.
+
+<img width="1276" alt="Screen Shot 2020-12-04 at 5 36 30 PM" src="https://user-images.githubusercontent.com/54859243/101228582-8ff32d00-3659-11eb-831e-dadfc522bc49.png">
+
+<img width="1310" alt="Screen Shot 2020-12-04 at 5 36 40 PM" src="https://user-images.githubusercontent.com/54859243/101228596-9d101c00-3659-11eb-88e5-946d0736f7de.png">
