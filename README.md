@@ -27,11 +27,13 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
     THE_MOVIE_DB_API_KEY: "paste_key_here"
     OPEN_MOVIE_DB_API_KEY: "paste_key_here"
     ```
-    *Do not change the variable name and ensure the API Keys are surrounded by quotes.*
+    *The variable names __THE_MOVIE_DB_API_KEY__ and __OPEN_MOVIE_DB_API_KEY__ must not be changed. Ensure the API Keys are wrapped in quotes.*
   
 1. Start the rails server and navigate to the homepage
 
    `rails s` and navigate to `localhost:3000` in your browser.
+   
+1. The database has been seeded with a few up and downvotes for the movies __Spider-Man: Into the Spider-verse__ and __The Dark Knight__ but you are free to explore all movies and vote on them as many times as you like. The upvote/downvote buttons are disabled after you've clicked on one until you refresh the page.
 
 # Application Images
 
