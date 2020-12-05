@@ -10,7 +10,6 @@ class SearchFacade
 
     def movie_overviews
         @mapped ||= movie_service_response[:results].map do |movie_info|
-            p "I'm mapping over movies right now....."
             MovieOverview.new(movie_info)
         end
     end
