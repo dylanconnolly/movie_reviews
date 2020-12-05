@@ -4,7 +4,7 @@
         <% @search_facade.movie_overviews.each do |movie_overview| %>
             <div class="col-sm-3 mb-3">
                 <a href="movies/<%= movie_overview.id %>" class="btn card shadow h-100 movie-index-card" data-toggle="tooltip" title="<%= movie_overview.short_description %>">
-                    <%= image_tag("https://image.tmdb.org/t/p/w300/#{movie_overview.backdrop_path}", class: "card-img-top", alt: "No Image") %>
+                    <%= image_tag(movie_overview.backdrop_path, class: "card-img-top", alt: "No Image") %>
                     <div class="card-body">
                         <h6 class="card-title">
                             <%= movie_overview.title %>

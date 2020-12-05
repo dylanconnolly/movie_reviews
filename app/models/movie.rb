@@ -1,5 +1,5 @@
 class Movie
-    attr_reader :id, :title, :directors, :imdb_id, :release_date, :overview, :backdrop_path, :poster_path, :runtime, :genre, :rated, :main_actors
+    attr_reader :id, :title, :directors, :imdb_id, :release_date, :overview, :poster_path, :runtime, :genre, :rated, :main_actors
 
     def initialize(movie_db_data, open_movie_db_data)
         @id = movie_db_data[:id]
@@ -21,6 +21,14 @@ class Movie
             ""
         else
             @release_date.split('-')[0]
+        end
+    end
+
+    def backdrop_path
+        if @backdrop_path == nil
+            "image_placeholder.jpg"
+        else
+            "https://image.tmdb.org/t/p/w1280/#{@backdrop_path}"
         end
     end
 end
