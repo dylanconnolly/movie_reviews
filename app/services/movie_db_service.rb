@@ -17,6 +17,11 @@ class MovieDbService
 
     def self.get_json(uri)
         response = connection.get("#{uri}api_key=#{ENV["THE_MOVIE_DB_API_KEY"]}")
-        JSON.parse(response.body, symbolize_names: true)
+        json = JSON.parse(response.body, symbolize_names: true)
+        if json[:success] == false
+            raise "Error with The Movie Database API service -- #{json[:status_message]}"
+        else
+            json
+        end
     end
 end

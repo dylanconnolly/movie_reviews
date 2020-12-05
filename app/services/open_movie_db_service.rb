@@ -13,6 +13,12 @@ class OpenMovieDbService
 
     def self.get_json(uri)
         response = connection.get("?apikey=#{ENV["OPEN_MOVIE_DB_API_KEY"]}#{uri}")
-        JSON.parse(response.body, symbolize_names: true)
+        json = JSON.parse(response.body, symbolize_names: true)
+        
+        if json[:Response] == "False"
+            raise "Error with Open Movie Database API service -- #{json[:Error]}"
+        else
+            json
+        end
     end
 end
