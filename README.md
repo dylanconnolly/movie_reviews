@@ -33,7 +33,7 @@ This is a Rails application which consumes two free movie APIs  ([The Movie Data
 
    `rails s` and navigate to `localhost:3000` in your browser.
    
-1. The database has been seeded with a few up and downvotes for the movies __Spider-Man: Into the Spider-verse__ and __The Dark Knight__ but you are free to explore all movies and vote on them as many times as you like. The upvote/downvote buttons are disabled after you've clicked on one until you refresh the page.
+1. The database has been seeded with a few up and downvotes for the movies __Spider-Man: Into the Spider-Verse__ and __The Dark Knight__ but you are free to explore all movies and vote on them as many times as you like. The upvote/downvote buttons are disabled after you've clicked on one until you refresh the page.
 
 # Application Images
 
