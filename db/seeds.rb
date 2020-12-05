@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# create 10 upvotes
+
+10.times do
+    MovieVote.create(title: "Spider-Man: Into the Spider-Verse", upvote: 1)
+end
+
+# create 7 downvotes 
+
+7.times do
+    MovieVote.create(title: "Spider-Man: Into the Spider-Verse", downvote: 1)
+end
+
+
+# create 12 upvotes
+
+12.times do
+    MovieVote.create(title: "The Dark Knight", upvote: 1)
+end
