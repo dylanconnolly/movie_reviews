@@ -5,7 +5,7 @@
             <h2 class="card-title pb-2 mb-2 border-bottom">
                 <div class="row align-items-center">
                     <div class="col-1 pr-0 title-banner-poster">
-                        <%= image_tag(@movie_facade.movie.poster_path, class: "title-poster")%>
+                        <%= image_tag("https://image.tmdb.org/t/p/w92/#{@movie_facade.movie.poster_path}", class: "title-poster")%>
                     </div>
                     <div class="col-8 pl-0 title-banner">
                             <%= @movie_facade.movie.title %>
